@@ -8,7 +8,7 @@ import re
 app = Flask(__name__)
 
 # Change this to your secret key (can be anything, it's for extra protection)
-app.secret_key = 'secretWJT'
+app.secret_key = 'secretUWA'
 
 # App Settings
 app.config['threaded'] = True
@@ -16,14 +16,14 @@ app.config['threaded'] = True
 # Enter your database connection details below
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Evenodd!512'
+app.config['MYSQL_PASSWORD'] = 'mysqlpsw'
 app.config['MYSQL_DB'] = 'pythonlogin_advanced'
 
 # Enter your email server details below, the following details uses the gmail smtp server (requires gmail account)
 app.config['MAIL_SERVER']= 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
-app.config['MAIL_USERNAME'] = 'wallytauriac@gmail.com'
-app.config['MAIL_PASSWORD'] = 'Evenodd!512'
+app.config['MAIL_USERNAME'] = 'test@example.com'
+app.config['MAIL_PASSWORD'] = 'emailpsw'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
