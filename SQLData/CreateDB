@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
 
 INSERT INTO `accounts` (`id`, `username`, `password`, `email`, `role`, `activation_code`, `rememberme`, `reset`, `registered`, `last_seen`, `tfa_code`, `ip`) VALUES
 (1, 'admin', 'b9fc65789ca65526a77b0009f24e9c01a43e32b3', 'admin@codeshack.io', 'Admin', 'activated', '', '', '2022-01-11 17:30:11', '2022-01-18 16:49:21', '', ''),
-INSERT INTO `accounts` (`id`, `username`, `password`, `email`) VALUES (1, 'test', '0ef15de6149819f2d10fc25b8c994b574245f193', 'test@test.com', 'Member', 'activated', '', '', '2022-01-11 17:30:11', '2022-01-18 16:49:21', '', ''));
+(1, 'test', '0ef15de6149819f2d10fc25b8c994b574245f193', 'test@test.com', 'Member', 'activated', '', '', '2022-01-11 17:30:11', '2022-01-18 16:49:21', '', '');
 
 CREATE TABLE IF NOT EXISTS `login_attempts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
