@@ -13,7 +13,7 @@ from flask_mysql_connector import MySQL
 app = Flask(__name__)
 
 # Change this to your secret key (can be anything, it's for extra protection)
-app.secret_key = 'secretUWA'
+app.secret_key = 'secretWJT'
 
 # App Settings
 app.config['threaded'] = True
@@ -21,14 +21,14 @@ app.config['threaded'] = True
 # Enter your database connection details below
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Your DB password'
+app.config['MYSQL_PASSWORD'] = 'Evenodd!512'
 app.config['MYSQL_DATABASE'] = 'pythonlogin_advanced'
 
 # Enter your email server details below, the following details uses the gmail smtp server (requires gmail account)
 app.config['MAIL_SERVER']= 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
-app.config['MAIL_USERNAME'] = 'Youraccount@gmail.com'
-app.config['MAIL_PASSWORD'] = 'Your email psw'
+app.config['MAIL_USERNAME'] = 'wallytauriac@gmail.com'
+app.config['MAIL_PASSWORD'] = 'Evenodd!512'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
@@ -92,9 +92,12 @@ def login():
                 return 'tfa: twofactor'
             # Create session data, we can access this data in other routes
             session['loggedin'] = True
-            session['id'] = account['id']
-            session['username'] = account['username']
-            session['role'] = account['role']
+            # session['id'] = account['id']
+            session['id'] = account[0]
+            # session['username'] = account['username']
+            session['username'] = account[1]
+            # session['role'] = account['role']
+            session['role'] = account[4]
             # Reset the attempts left
             cursor.execute('DELETE FROM login_attempts WHERE ip_address = %s', (request.environ['REMOTE_ADDR'],))
             mysql.connection.commit()
@@ -898,6 +901,8 @@ def time_elapsed_string(dt):
     else:
         return '%s minutes ago' % round(timeDelta.seconds / 60)
 
+
 if __name__ == '__main__':
     app.debug = True
     app.run()
+
